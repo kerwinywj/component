@@ -4,6 +4,7 @@
 
 //建立Jquery，Jquery-ui模块和路径的映射关系
 require.config({
+	waitSeconds: 0,
     paths: {
         jquery: 'jquery-1.10.2',
         jqueryUI: 'jquery-ui'
