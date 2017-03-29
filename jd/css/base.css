@@ -1,0 +1,674 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;               /*清除input,button的外边线*/
+}
+
+ul, ol {
+    list-style: none;				/*清除列表风格*/
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;/*兼容IE8，居中显示*/
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+/*防止多行文本框拖动*/
+textarea {
+    resize: none;
+}
+
+/*  去掉图片底测默认的3像素空白缝隙*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;			/*合并外边线*/
+}
+
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*宋体，Unicode，统一码*/
+    color: #666;
+    background: #fff
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C81623;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;  /* 继承body字体大小，覆盖浏览器的默认样式 */
+}
+/*功能被淘汰的小标签，主要使用在小效果图*/
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
+
+.col-red {
+    color: #C81623 !important;
+}
+
+/*公共类*/
+.w {
+    /*版心 提取 */
+    width: 1210px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    text-align: left;
+}
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.hide {
+    display: none;
+}
+.bold {
+    font-weight: 700;
+}
+
+/*site-nav部分start*/
+.site-nav {
+    height: 30px;
+    line-height: 30px;
+    background-color: #F1F1F1;
+}
+.site-nav-send-left {
+    position: relative;
+}
+.site-nav-send,
+.site-nav-r .site-nav-r-fore {
+    padding: 0 25px 0 10px;/*使用padding挤开宽度，方便小三角定位设置*/
+    position: relative;
+}
+
+.send-address {
+    position: absolute;
+    z-index: 99;
+    top: 14px;
+    left: 32px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 260px;
+    font: 14px/18px "microsoft yahei";
+    padding: 15px;
+    margin-top: 16px;
+}
+.item-address {
+    float: left;
+    width: 60px;
+    height: 24px;
+    padding: 2px;
+}
+.item-address a {
+    padding: 2px 8px;
+}
+.item-address a:hover {
+    background: #f4f4f4;
+}
+.address-select {
+    color: #fff;
+    background: #c81623;
+}
+.item-address .address-select:hover {
+    color: #fff;
+    background: #c81623;
+}
+.tri_icon {
+    transform: rotate(0deg);   /* 初始值旋转0度 */
+}
+.site-nav-send:hover .tri_icon, .my_jdfa:hover .tri_icon, .jd-tel:hover .tri_icon,
+.snav-jd-follow:hover .tri_icon, .custom-service-jd:hover .tri_icon, .internet-nav-jd:hover .tri_icon {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.site-nav-send i,
+.site-nav-r-fore i {    /* i标签控制菱形具体显示的位置，在哪里显示 */
+    position: absolute;
+    top: 12px;
+    right: 6px;
+    width: 15px;
+    height: 9px;
+    font: 400 15px/15px "宋体";
+    overflow: hidden;
+}
+.site-nav-send i s,    /* s标签控制菱形具体显示菱形的哪一部分，即：下面的三角形 */
+.site-nav-r-fore i s {
+    position: absolute;
+    top: -8px;
+    right: 1px;
+}
+.site-nav-send:hover {
+    background-color: #fff;
+}
+
+.site-nav-r ul li {
+    float: left;
+    padding: 0 10px;
+}
+.site-nav-r .site-nav-r-line {
+    width: 1px;
+    height: 12px;
+    background-color: #DDDDDD;
+    margin-top: 9px;
+    padding: 0;
+}
+.my_jd {
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    left: 0px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 260px;
+    font: 14px/18px "microsoft yahei";
+    padding: 15px;
+}
+.my_jd img {
+    float: left;
+    margin-right: 10px;
+}
+.my_jd ul {
+    margin-top: 30px;
+}
+.my_jd ul li {
+    float: left;
+    width: 110px;
+    padding: 3px 0;
+}
+.my_jdfa:hover .my_jd {
+    display: block;
+}
+.site-nav-r .jd-tel {
+    padding-left: 25px;
+}
+.tel {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 15px;
+    height: 20px;
+    background: url(../images/tel.png) no-repeat;
+}
+.phone-jd {
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    left: 0px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 260px;
+    font: 14px/18px "microsoft yahei";
+    padding: 15px;
+}
+.jd-tel:hover .phone-jd {
+    display: block;
+}
+.follow-jd {
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    left: 0px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 85px;
+    font: 14px/18px "microsoft yahei";
+    padding: 15px;
+}
+.snav-jd-follow:hover .follow-jd {
+    display: block;
+}
+.custom-service {
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    left: 0px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 170px;
+    font: 14px/18px "microsoft yahei";
+    padding: 15px 20px 8px 0px;
+}
+.custom-service-top, .custom-service-bottom {
+    width: 100%;
+    padding: 0 10px 6px 10px;
+}
+.custom-service-top {
+    margin-bottom: 6px;
+    border-bottom: 1px dotted #ddd;
+}
+.custom-service h3 {
+    line-height: 24px;
+    height: 24px;
+}
+.custom-service-top ul {
+    display: block;
+    width: 170px;
+    height: 90px;
+}
+.custom-service-top ul li {
+    float: left;
+    padding: 2px 26px 2px 3px;
+}
+.custom-service-jd:hover .custom-service {
+    display: block;
+}
+.internet-nav {
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    right: 0px;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 1210px;
+    font: 14px/18px "microsoft yahei";
+    padding: 10px;
+}
+.internet-nav h3 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.site-nav-r-fore .internet-nav li {
+    line-height: 26px;
+    width: 86px;
+    padding: 0;
+}
+.internet-nav-jd:hover .internet-nav {
+    display: block;
+}
+.theme, .channel, .lfservice {
+    float: left;
+    border-right: 1px solid #ddd;
+    margin-left: 8px;
+}
+.morechoice {
+    float: left;
+    margin-left: 20px;
+}
+.theme {
+    width: 345px;
+}
+.channel {
+    width: 260px;
+}
+.lfservice {
+    width: 275px;
+}
+.morechoice {
+    width: 265px;
+}
+
+
+/*site-nav部分end*/
+
+
+
+/*topbanner部分start*/
+.topbanner {
+    width: 100%;
+    height: 80px;
+    background-color: #8B25C6;
+}
+.top-w {
+    position: relative;
+}
+.topbanner-dobule11 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 19px;/*设置图片宽高，显示图片*/
+    height: 19px;
+    background: url(../images/close.png) no-repeat;
+}
+.topbanner-dobule11:hover {
+    background-position: bottom center;
+}
+/*topbanner部分end*/
+
+
+/*search部分start*/
+.search-logo {
+    float: left;
+    width: 362px;
+    height: 60px;
+    padding: 20px 0;
+    position: relative;
+}
+.jd-a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    text-indent: -9999px;
+    background: url(../images/jd-logo.png) no-repeat;
+
+}
+.jd-db11 {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+}
+.search-input {
+    float: left;
+    padding-top: 25px;
+    height: 36px;
+}
+.search-input input {
+    float: left;
+    width: 450px;
+    height: 32px;
+    border: 2px solid #B61D1D;
+    padding-left: 4px;
+    font: 400 14px/32px "microsoft yahei";
+    color: #666666;
+}
+.search-input button {
+    float: left;
+    width: 80px;
+    height: 36px;
+    background-color: #B61D1D;
+    text-align: center;  /*兼容其他浏览器居中显示*/
+    font: 400 16px/36px "microsoft yahei";
+    color: #fff;
+    cursor: pointer;
+}
+.search-car {
+    float: right;
+    width: 96px;
+    height: 34px;
+    line-height: 34px;/*让内容垂直居中*/
+    padding-left: 44px;
+    border: 1px solid #DDDDDD;
+    margin: 25px 65px 0 0;
+    background-color: #F9F9F9;
+    position: relative;
+}
+.search-car-icon1 {
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    width: 18px;
+    height: 16px;
+    background: url(../images/tel.png) no-repeat 0 -90px;
+}
+.search-car-icon2 {
+    position: absolute;
+    top: 1px;
+    right: 17px;
+    font: 400 14px/34px "simsun";
+}
+.search-car-icon3 {
+    position: absolute;
+    top: -4px;
+    width: 16px;
+    height: 14px;
+    text-align: center;
+    background-color: #C81623;
+    font: 400 12px/14px "simsun";
+    color: #fff;
+    border-radius: 7px 7px 7px 0;   /* 设置圆角 */
+}
+.mask-shadow {  /* 用一个白色背景遮罩层 遮住线 */
+    position: absolute;
+    z-index: 200;
+    top: 30px;
+    right: 0;
+    display: none;
+    width: 140px;
+    height: 10px;
+    background: #fff;
+}
+.shop-none {
+    position: absolute;
+    z-index: 70;
+    top: 35px;
+    right: -1px;
+    display: none;
+    width: 308px;
+    height: 68px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0px 0px 6px #ddd;
+}
+.shop-none .choose-buy {
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 40px;
+    padding: 16px 0px 0px 55px;
+    background: url(../images/settleup-nogoods.png) no-repeat;
+}
+.search-car:hover {
+    padding-bottom: 0;
+    border-bottom: none;
+    background: #fff;
+    box-shadow: 0 0 6px #ddd;
+}
+.search-car:hover .shop-none,
+.search-car:hover .mask-shadow {
+    display: block;
+}
+
+.search-more {
+    float: left;
+    width: 500px;
+    height: 30px;
+    line-height: 30px;
+}
+.search-more a {
+    margin-right: 10px;
+    color: #999;
+}
+.search-more a:hover {
+    color: #B61D1D;
+}
+/*search部分end*/
+
+
+
+/*footer部分start*/
+.footer-service {
+    margin-bottom: 18px;
+}
+.footer-service-slogans {
+    height: 54px;
+    padding: 20px 0;
+    background-color: #F5F5F5;
+    position: relative;
+    margin-bottom: 15px;
+}
+.slogan {
+    position: absolute;
+    left: 50%;
+    width: 300px;
+    height: 54px;
+}
+.slogan1 { /* 绝对定位，居中对齐，响应式 */
+    margin-left: -604px;
+}
+.slogan2 {
+    margin-left: -302px;
+}
+.slogan4 {
+    margin-left: 302px;
+}
+.footer-service-shopping dl {
+    float: left;
+    width: 200px;
+}
+.footer-service-shopping dl dt,
+.coverage h1 {
+    height: 35px;
+    line-height: 35px;
+    font: 400 16px/35px "microsoft yahei";
+}
+.footer-service-shopping .last-dl {
+    width: 100px;
+}
+.footer-service-shopping dl dd {
+    height: 20px;
+    line-height: 20px;
+    font: 400 14px/20px "microsoft yahei";
+}
+.coverage {
+    float: right;
+    width: 185px;
+    height: 170px;
+    padding-left: 15px;
+    background: url(../images/china.png) no-repeat left bottom;
+    margin-right: 38px;
+}
+.coverage p {
+    margin-top: 8px;
+}
+.coverage a {
+    float: right;
+}
+.footer-others {
+    text-align: center;
+    border-top: 1px solid #E5E5E5;
+    padding: 20px 0 30px 0;
+}
+.footer-others-links a {
+     margin: 0 10px;
+}
+.footer-others-copyright {
+    margin: 17px 0 12px 0;
+    line-height: 20px;
+}
+.footer-others-img img {
+    margin: 0 7px;
+}
+
+/*footer部分end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
